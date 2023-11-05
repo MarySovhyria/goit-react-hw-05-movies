@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { Link, Outlet, useParams, useLocation} from 'react-router-dom';
 import { fetchMovieDetails } from 'components/service/API';
 import { Title, Image, Container, AdditionalInf } from './SpecificMovie.styled';
@@ -67,7 +67,9 @@ const SpecificMovie = () => {
     </AdditionalInf>
     
      
-      <Outlet />
+    <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
 
     </div>
   );
