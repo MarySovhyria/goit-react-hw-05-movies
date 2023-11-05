@@ -6,6 +6,12 @@ import Reviews from './Reviews/Reviews';
 import Layout from './Layout/Layout';
 import Movies from '../page/Movies';
 
+const Home = lazy(() => import('../page/Home'));
+const Movies = lazy(() => import('../pages/Movies'));
+const SpecificMovie = lazy(() => import('./SpecificMovie'));
+const Cast = lazy(() => import('./Cast/Cast'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
+
 export const App = () => {
   return (
       <Routes>
