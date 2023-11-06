@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 
-import { HandleMovieSearch } from 'components/service/API';
+import { HandleMovieSearch } from 'service/API';
 import { SearchForm } from 'components/SeacrhForm/SearchForm';
-import ListOfFilms from 'page/ListOfFilms';
+import ListOfFilms from 'components/ListOfFilms/ListOfFilms';
 
 const Movies = () => {
   const [searchResults, setSearchResults] = useState([]);

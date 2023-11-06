@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { Link, Outlet, useParams, useLocation} from 'react-router-dom';
-import { fetchMovieDetails } from 'components/service/API';
+import { fetchMovieDetails } from 'service/API';
 import { Title, Image, Container, AdditionalInf } from './SpecificMovie.styled';
+import placeholder from 'components/images/placeholder.webp'
 
 
 
@@ -42,7 +43,10 @@ const SpecificMovie = () => {
       <Container>
         <div> 
           <Image
-            src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+            src={movieDetails.poster_path
+              ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
+              : `${placeholder}`
+            }
             alt={movieDetails.title}
           />
         </div>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { fetchMovieCast } from 'components/service/API';
+import { fetchMovieCast } from 'service/API';
+import placeholder from '../images/placeholder.webp'
 
 
 const Cast = () => {
@@ -33,7 +34,9 @@ const Cast = () => {
                 <img
                   width="200px"
                   height="300px"
-                  src={`https://image.tmdb.org/t/p/w300${actor.profile_path}`
+                  src={  actor.profile_path
+                      ? `https://image.tmdb.org/t/p/w300${actor.profile_path}`
+                      : `${placeholder}`
                   }
                   alt={actor.original_name}
                 />

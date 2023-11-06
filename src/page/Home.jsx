@@ -1,5 +1,5 @@
-import ListOfFilms from "./ListOfFilms";
-import { fetchTrendingMovies } from "components/service/API";
+import ListOfFilms from "../components/ListOfFilms/ListOfFilms";
+import { fetchTrendingMovies } from "service/API";
 import React, { useEffect, useState } from 'react';
 
 const Home = () => {
